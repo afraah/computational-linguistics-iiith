@@ -1,0 +1,27 @@
+Functionalities for Exp. 2:-
+
+1. By clicking on the various buttons (Introduction, Theory, Objective, Experiment, Quizzes, Procedure) the respective information is shown on the screen.
+
+2. On clicking the experiment button, we can select a language (either Hindi or English)
+
+3. After a languade is selected, the user is asked to form a proper sentence with the given words.
+
+4. The "Re-form the sentence" button is used to RESET the words.
+
+5. The "Check the correctness of this sentence" button returns "Right Answer" if the sentence created by the user matches that of the stored correct answer else gives "Wrong Answer".
+
+6. If a user gets "Wrong Answer" another button is available for them called "Get Correct Sentence", which gives the properly formed sentence to the user.
+
+7. After clicking on the "Get Correct Sentence" button, another button is available called "Hide the correct sentence" button which undos what the "Get Correct Sentence" showed on the screen and replaces the "Get Correct Sentence" button with "Get Answers" button having the same functionalities as the former mentioned button.
+
+
+
+Functionalities that could be added:-
+
+1. A button that gives a hint.
+
+2. A score tracker
+
+3. A button that gives a new set of words.
+
+
