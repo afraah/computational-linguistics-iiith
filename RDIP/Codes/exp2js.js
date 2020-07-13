@@ -30,8 +30,32 @@ function shuffle(arr){
       return arr;
 
 }
+function btnfunc(bid,bvalue,words){
+	document.getElementById("formedsentmes").innerHTML="Formed Sentence (After selecting words): <br/>";
+    document.getElementById("sent").innerHTML+= "  " + bvalue;
+     document.getElementById(bid).style.display="none";
+      document.getElementById("reform").style.display="block";
+
+}
+var w="";
+
+function reform(){
+	     document.getElementById("buttons").innerHTML="";
+
+	 for(var i=0;i<w.length;i++)
+                {
+       document.getElementById("buttons").innerHTML += "<button id='btn"+i+"' value='"+w[i]+"' onclick='btnfunc(this.id, this.value);'>"+w[i]+"</button> &nbsp; &nbsp;  ";
+                   
+    }
+    document.getElementById("formedsentmes").innerHTML="";
+    document.getElementById("sent").innerHTML="";
+       document.getElementById("reform").style.display="none";
+       
+}
 
 $(document).ready(function(){
+				
+
 			  $("#language").change(function(){
 			  	if(language.value=="hindi") {
 			  	document.getElementById("buttons").innerHTML=""; //emptying all prev buttons
@@ -45,12 +69,14 @@ $(document).ready(function(){
 			     var words=str.split(" ");
 
 			     words=shuffle(words);
+			     w=words;
                  
                  //document.getElementById("words").innerHTML=words;
 
-                 for(var i=0;i<words.length;i++)
+                 
+			     for(var i=0;i<words.length;i++)
                 {
-                    document.getElementById("buttons").innerHTML += "<button id='btn'>"+words[i]+"</button> &nbsp; &nbsp; ";
+                    document.getElementById("buttons").innerHTML += "<button id='btn"+i+"' value='"+words[i]+"' onclick='btnfunc(this.id, this.value);'>"+words[i]+"</button> &nbsp; &nbsp;  ";
                    
                 }
 			 }
@@ -62,19 +88,25 @@ $(document).ready(function(){
 
 			     var str=obj.english[ran].a;
 
-			     var words=str.split(" ");
+			     words=str.split(" ");
 
 			     words=shuffle(words);
-
+                 w=words;
 			     //document.getElementById("words").innerHTML=words;
 
 			     for(var i=0;i<words.length;i++)
                 {
-                    document.getElementById("buttons").innerHTML += "<button id='btn'>"+words[i]+"</button> &nbsp; &nbsp;  ";
+                    document.getElementById("buttons").innerHTML += "<button id='btn"+i+"' value='"+words[i]+"' onclick='btnfunc(this.id, this.value);'>"+words[i]+"</button> &nbsp; &nbsp;  ";
                    
                 }
 
+     
+
 			 }
 	 });
+
+
 			 
 });
+
+
