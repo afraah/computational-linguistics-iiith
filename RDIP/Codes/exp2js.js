@@ -1,4 +1,5 @@
 
+
 var sentences= '{ "english":[{"a":"John ate an apple before afternoon", "b":"before afternoon John ate an apple","c":"John before afternoon ate an apple"},'+
 '{"a":"some students like to study in the night","b":"at night some students like to study"},{"a":"John and Mary went to church","b":"Mary and John went to church"}'+
 ',{"a":"John went to church after eating","b":"after eating John went to church","c":"John after eating went to church"},{"a":"did he go to market","b":"he did go to market"}'+
@@ -15,3 +16,15 @@ var sentences= '{ "english":[{"a":"John ate an apple before afternoon", "b":"bef
 
 //document.write(obj.hindi[1].b);
 
+$(document).ready(function(){
+			  $("#language").change(function(){
+			  	if(language.value=="hindi") {
+			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			 }
+
+			 else if(language.value=="english"){
+			 	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			 }
+	 });
+			 
+});
