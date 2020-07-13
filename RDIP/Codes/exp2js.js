@@ -33,25 +33,49 @@ function shuffle(arr){
 var w="";
 var count=50;
 var final_sen="";
+var num_keys=50;
+var lang="";
+var ran=50;
 
 function btnfunc(bid,bvalue,words){
 	document.getElementById("formedsentmes").innerHTML="Formed Sentence (After selecting words): <br/>";
-    document.getElementById("sent").innerHTML+= "  " + bvalue;
+    document.getElementById("sent").innerHTML+= " " + bvalue;
      document.getElementById(bid).style.display="none";
       document.getElementById("reform").style.display="block";
       count--;
 
       if(count==0){
       	final_sen=document.getElementById("sent").innerHTML; //final sentence
-      	//document.write(final_sen);
+      	final_sen=final_sen.trim();
   	     document.getElementById("checkcor").style.display="block";
       }
 
 }
 
-//function checkcor(){
+function checkcor(){
+//use final_sen global variable
 
-//}
+		//for(var i=0;i<num_keys;i++){
+			// var str=obj.hindi[ran].a;
+           //if(){
+           //	  document.getElementById("ans").innerHTML="Correct Answer!";
+           //}
+		//}
+		if(lang=="e")
+        	var temp_obj= obj.english[ran];
+        else if(lang=="h")
+        	var temp_obj=obj.hindi[ran];
+
+		for(var key in temp_obj){
+            var val=temp_obj[key];
+            console.log(val);
+            if(val.trim()==final_sen){
+  				document.getElementById("ans").innerHTML="Correct Answer!";
+  				return false;
+            }
+		}
+  document.getElementById("ans").innerHTML="Wrong Answer!";
+}
 
 
 function reform(){ //Here is the reform button's functionality
@@ -67,6 +91,7 @@ function reform(){ //Here is the reform button's functionality
     document.getElementById("sent").innerHTML="";
        document.getElementById("reform").style.display="none";
         document.getElementById("checkcor").style.display="none";
+        document.getElementById("ans").innerHTML="";
 
 }
 
@@ -80,11 +105,13 @@ $(document).ready(function(){
                 document.getElementById("sent").innerHTML="";
                    document.getElementById("reform").style.display="none";
                    document.getElementById("checkcor").style.display="none";
+                   document.getElementById("ans").innerHTML="";
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
 			    
-			    var ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
-
+			    ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
+                lang="h";
 			     var str=obj.hindi[ran].a;
+			      num_keys=Object.keys(obj.hindi[ran]).length;
 
 			     // document.getElementById("words").innerHTML=str;
 			     var words=str.split(" ");
@@ -109,12 +136,17 @@ $(document).ready(function(){
                   document.getElementById("sent").innerHTML="";
                   document.getElementById("reform").style.display="none";
                    document.getElementById("checkcor").style.display="none";
+                   document.getElementById("ans").innerHTML="";
 
 
 			    	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
-			     var ran= Math.floor(Math.random() * 10);   // returns a random integer from 0 to 9
-
+			      ran= Math.floor(Math.random() * 10);   // returns a random integer from 0 to 9
+                  lang="e";
 			     var str=obj.english[ran].a;
+
+			     num_keys=Object.keys(obj.english[ran]).length;
+
+			     //document.write(str+" "+num);
 
 			     words=str.split(" ");
 
