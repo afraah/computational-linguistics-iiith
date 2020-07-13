@@ -12,18 +12,68 @@ var sentences= '{ "english":[{"a":"John ate an apple before afternoon", "b":"bef
 '{"a":"एक लाल किताब वहाँ है","b":"एक लाल किताब है वहाँ","c":"वहाँ है एक लाल किताब","d":"है वहाँ एक लाल किताब"},{"a":"एक बड़ी सी किताब वहाँ है","b":"एक बड़ी सी किताब है वहाँ","c":"बड़ी सी एक किताब वहाँ है","d":"बड़ी सी एक किताब है वहाँ","e":"वहाँ है एक बड़ी सी किताब","f":"वहाँ है बड़ी सी एक किताब","g":"है वहाँ एक बड़ी सी किताब","h":"है वहाँ बड़ी सी एक किताब"}]'+ 
 '}';
 
-//obj = JSON.parse(sentences);
+obj = JSON.parse(sentences);
 
 //document.write(obj.hindi[1].b);
+
+//there are 10 English and 7 Hindi sentences
+
+function shuffle(arr){
+      var length=arr.length;
+
+      for(var i=0; i<arr.length ;i++){
+      	 var ran=Math.floor(Math.random() * length);
+      	 temp=arr[i];
+      	 arr[i]=arr[ran];
+      	 arr[ran]=temp;
+      }
+      return arr;
+
+}
 
 $(document).ready(function(){
 			  $("#language").change(function(){
 			  	if(language.value=="hindi") {
+			  	document.getElementById("buttons").innerHTML=""; //emptying all prev buttons
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			    
+			    var ran= Math.floor(Math.random() * 8);   // returns a random integer from 0 to 7
+
+			     var str=obj.hindi[ran].a;
+
+			     // document.getElementById("words").innerHTML=str;
+			     var words=str.split(" ");
+
+			     words=shuffle(words);
+                 
+                 //document.getElementById("words").innerHTML=words;
+
+                 for(var i=0;i<words.length;i++)
+                {
+                    document.getElementById("buttons").innerHTML += "<button id='btn'>"+words[i]+"</button> &nbsp; &nbsp; ";
+                   
+                }
 			 }
 
 			 else if(language.value=="english"){
+			 	 document.getElementById("buttons").innerHTML=""; ////emptying all prev buttons
 			 	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			     var ran= Math.floor(Math.random() * 11);   // returns a random integer from 0 to 10
+
+			     var str=obj.english[ran].a;
+
+			     var words=str.split(" ");
+
+			     words=shuffle(words);
+
+			     //document.getElementById("words").innerHTML=words;
+
+			     for(var i=0;i<words.length;i++)
+                {
+                    document.getElementById("buttons").innerHTML += "<button id='btn'>"+words[i]+"</button> &nbsp; &nbsp;  ";
+                   
+                }
+
 			 }
 	 });
 			 
