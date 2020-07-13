@@ -37,7 +37,7 @@ $(document).ready(function(){
 			  	document.getElementById("buttons").innerHTML=""; //emptying all prev buttons
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
 			    
-			    var ran= Math.floor(Math.random() * 8);   // returns a random integer from 0 to 7
+			    var ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
 
 			     var str=obj.hindi[ran].a;
 
@@ -58,7 +58,7 @@ $(document).ready(function(){
 			 else if(language.value=="english"){
 			 	 document.getElementById("buttons").innerHTML=""; ////emptying all prev buttons
 			 	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
-			     var ran= Math.floor(Math.random() * 11);   // returns a random integer from 0 to 10
+			     var ran= Math.floor(Math.random() * 10);   // returns a random integer from 0 to 9
 
 			     var str=obj.english[ran].a;
 
