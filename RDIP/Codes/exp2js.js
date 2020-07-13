@@ -39,7 +39,7 @@ function btnfunc(bid,bvalue,words){
 }
 var w="";
 
-function reform(){
+function reform(){ //Here is the reform button's functionality
 	     document.getElementById("buttons").innerHTML="";
 
 	 for(var i=0;i<w.length;i++)
@@ -50,7 +50,7 @@ function reform(){
     document.getElementById("formedsentmes").innerHTML="";
     document.getElementById("sent").innerHTML="";
        document.getElementById("reform").style.display="none";
-       
+
 }
 
 $(document).ready(function(){
