@@ -30,14 +30,29 @@ function shuffle(arr){
       return arr;
 
 }
+var w="";
+var count=50;
+var final_sen="";
+
 function btnfunc(bid,bvalue,words){
 	document.getElementById("formedsentmes").innerHTML="Formed Sentence (After selecting words): <br/>";
     document.getElementById("sent").innerHTML+= "  " + bvalue;
      document.getElementById(bid).style.display="none";
       document.getElementById("reform").style.display="block";
+      count--;
+
+      if(count==0){
+      	final_sen=document.getElementById("sent").innerHTML; //final sentence
+      	//document.write(final_sen);
+  	     document.getElementById("checkcor").style.display="block";
+      }
 
 }
-var w="";
+
+//function checkcor(){
+
+//}
+
 
 function reform(){ //Here is the reform button's functionality
 	     document.getElementById("buttons").innerHTML="";
@@ -47,9 +62,11 @@ function reform(){ //Here is the reform button's functionality
        document.getElementById("buttons").innerHTML += "<button id='btn"+i+"' value='"+w[i]+"' onclick='btnfunc(this.id, this.value);'>"+w[i]+"</button> &nbsp; &nbsp;  ";
                    
     }
+    count=w.length;
     document.getElementById("formedsentmes").innerHTML="";
     document.getElementById("sent").innerHTML="";
        document.getElementById("reform").style.display="none";
+        document.getElementById("checkcor").style.display="none";
 
 }
 
@@ -59,6 +76,10 @@ $(document).ready(function(){
 			  $("#language").change(function(){
 			  	if(language.value=="hindi") {
 			  	document.getElementById("buttons").innerHTML=""; //emptying all prev buttons
+			  	  document.getElementById("formedsentmes").innerHTML="";
+                document.getElementById("sent").innerHTML="";
+                   document.getElementById("reform").style.display="none";
+                   document.getElementById("checkcor").style.display="none";
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
 			    
 			    var ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
@@ -70,6 +91,7 @@ $(document).ready(function(){
 
 			     words=shuffle(words);
 			     w=words;
+			     count=words.length;
                  
                  //document.getElementById("words").innerHTML=words;
 
@@ -83,7 +105,13 @@ $(document).ready(function(){
 
 			 else if(language.value=="english"){
 			 	 document.getElementById("buttons").innerHTML=""; ////emptying all prev buttons
-			 	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			 	   document.getElementById("formedsentmes").innerHTML="";
+                  document.getElementById("sent").innerHTML="";
+                  document.getElementById("reform").style.display="none";
+                   document.getElementById("checkcor").style.display="none";
+
+
+			    	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
 			     var ran= Math.floor(Math.random() * 10);   // returns a random integer from 0 to 9
 
 			     var str=obj.english[ran].a;
@@ -92,6 +120,7 @@ $(document).ready(function(){
 
 			     words=shuffle(words);
                  w=words;
+                  count=words.length;
 			     //document.getElementById("words").innerHTML=words;
 
 			     for(var i=0;i<words.length;i++)
