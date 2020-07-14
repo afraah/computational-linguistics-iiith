@@ -80,7 +80,8 @@ function checkcor(){
     //displaying the Get Correct Sentence Button 
 }
 
-/* function getcor(){
+
+function getcor(){
 
 	//if( document.getElementById("getcor").value=="getcorrect")
 	if( document.getElementById("getcor").innerHTML=="Get Correct Sentence" || document.getElementById("getcor").innerHTML=="Get Answers"){
@@ -105,7 +106,7 @@ function checkcor(){
 		  }
 
 
-	} */
+} 
 
 
 
