@@ -148,7 +148,7 @@ $(document).ready(function(){
                    document.getElementById("getcor").innerHTML="Get Correct Sentence";
 
 
-			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
+			    document.getElementById("instr").innerHTML="<b>Form a sentence (Declarative or Interrogative or any other type) from the given words.</b> <br/> (Select the buttons in proper order.)";
 			    
 			    ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
                 lang="h";

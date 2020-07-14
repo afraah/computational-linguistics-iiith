@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head> <meta charset="utf-8">
-	<title></title>
+	<title>Virtual Labs</title>
 	<style>
 			ul {
 			  list-style-type: none;
@@ -45,12 +45,15 @@
 			    left: 118px;
 			}
 
+
 			</style>
 </head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<body>
+<body class="container-fluid" style="background-color: #FAD7A0;">
+    
 	<a href="https://www.iiit.ac.in/">
 		<img src="C:\Users\afraa\gitprac\iiit-new.png" width="115px" height="70px" style="padding-bottom:15px ">
      </a>
@@ -77,8 +80,8 @@
 		<p id="formedsentmes" ></p>
 		<p id="sent" style="font-weight: bold"></p>
 		<button id="reform" style="display:none;" onclick='reform();'>Re-form the Sentence</button>
-		<button id="checkcor" style="display:none;" onclick='checkcor();'>Check Correctness of this Sentence </button>
-		<p id="ans"></p>
+		<button id="checkcor" style="display:none;" onclick='checkcor();'>Check Correctness of this Sentence </button><br/>
+		<p id="ans" style="font-weight: bold"></p>
 		<button id="getcor" style="display:none;" value="getcorrect" onclick='getcor();'>Get Correct Sentence</button>
 		<p id="anslist"></p>
 
