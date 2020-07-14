@@ -71,10 +71,12 @@ function checkcor(){
             console.log(val);
             if(val.trim()==final_sen){
   				document.getElementById("ans").innerHTML="Correct Answer!";
+  				 document.getElementById("ans").style.color="green";
   				return false;
             }
 		}
   document.getElementById("ans").innerHTML="Wrong Answer!";
+  document.getElementById("ans").style.color="red";
     document.getElementById("getcor").style.display="block"; 
 
     //displaying the Get Correct Sentence Button 
@@ -126,6 +128,7 @@ function reform(){ //Here is the reform button's functionality
         document.getElementById("ans").innerHTML="";
          document.getElementById("getcor").style.display="none";
           document.getElementById("anslist").innerHTML="";
+          document.getElementById("getcor").innerHTML="Get Correct Sentence";
 
 }
 
@@ -141,6 +144,8 @@ $(document).ready(function(){
                    document.getElementById("checkcor").style.display="none";
                    document.getElementById("ans").innerHTML="";
                    document.getElementById("getcor").style.display="none";
+                   document.getElementById("anslist").innerHTML="";
+                   document.getElementById("getcor").innerHTML="Get Correct Sentence";
 
 
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
@@ -175,6 +180,8 @@ $(document).ready(function(){
                    document.getElementById("checkcor").style.display="none";
                    document.getElementById("ans").innerHTML="";
                    document.getElementById("getcor").style.display="none";
+                   document.getElementById("anslist").innerHTML="";
+                   document.getElementById("getcor").innerHTML="Get Correct Sentence"; 
 
 
 			    	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
