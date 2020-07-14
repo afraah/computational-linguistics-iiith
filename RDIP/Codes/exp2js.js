@@ -75,7 +75,38 @@ function checkcor(){
             }
 		}
   document.getElementById("ans").innerHTML="Wrong Answer!";
+    document.getElementById("getcor").style.display="block"; 
+
+    //displaying the Get Correct Sentence Button 
 }
+
+/* function getcor(){
+
+	//if( document.getElementById("getcor").value=="getcorrect")
+	if( document.getElementById("getcor").innerHTML=="Get Correct Sentence" || document.getElementById("getcor").innerHTML=="Get Answers"){
+
+				if(lang=="e")
+		        	var temp_obj= obj.english[ran];
+		        else if(lang=="h")
+		        	var temp_obj=obj.hindi[ran];
+
+		        for(var key in temp_obj){
+		            var val=temp_obj[key];
+		            //console.log(val);
+		            document.getElementById("anslist").innerHTML+=val+"<br/>";
+		        }
+
+		        document.getElementById("getcor").innerHTML="Hide the Correct Sentence";
+		  }
+
+		  else if( document.getElementById("getcor").innerHTML=="Hide the Correct Sentence"){
+		  	     document.getElementById("anslist").innerHTML="";
+		  	      document.getElementById("getcor").innerHTML="Get Answers";
+		  }
+
+
+	} */
+
 
 
 function reform(){ //Here is the reform button's functionality
@@ -92,6 +123,8 @@ function reform(){ //Here is the reform button's functionality
        document.getElementById("reform").style.display="none";
         document.getElementById("checkcor").style.display="none";
         document.getElementById("ans").innerHTML="";
+         document.getElementById("getcor").style.display="none";
+          document.getElementById("anslist").innerHTML="";
 
 }
 
@@ -106,6 +139,9 @@ $(document).ready(function(){
                    document.getElementById("reform").style.display="none";
                    document.getElementById("checkcor").style.display="none";
                    document.getElementById("ans").innerHTML="";
+                   document.getElementById("getcor").style.display="none";
+
+
 			    document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
 			    
 			    ran= Math.floor(Math.random() * 7);   // returns a random integer from 0 to 6
@@ -137,6 +173,7 @@ $(document).ready(function(){
                   document.getElementById("reform").style.display="none";
                    document.getElementById("checkcor").style.display="none";
                    document.getElementById("ans").innerHTML="";
+                   document.getElementById("getcor").style.display="none";
 
 
 			    	document.getElementById("instr").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given words. <br/> (Select the buttons in proper order.)";
