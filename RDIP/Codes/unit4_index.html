@@ -45,6 +45,7 @@
 			    left: 118px;
 			}
 
+			
 
 			</style>
 </head>
@@ -65,7 +66,7 @@
 
 <!-- START -->
 <br/> <center>
-	<label for="language">Choose a Corpus:</label> <br/>
+	<label for="corpus">Choose a Corpus:</label> <br/>
 		<select id="corpus" name="corpus" style="width: 200px; ">
 			 <option value="" selected="selected" hidden="hidden">------ Select a Corpus -------</option>
 			<option value="c1">Corpus 1</option>
@@ -73,9 +74,18 @@
 			<option value="c3">Corpus 3</option>
 		</select>
 
-     </center>
+   
+
+<br/>
+ <p id="c"></p>
+ <p id="mes"></p>
 
 
+ 	<table id="table1" style="display: none; padding: 40px; background-color: lightpink;" border="1" ><tr><td>#tokens:</td><td><input type="text" name="tokens"></td></tr>
+ 		<tr><td>#types:</td><td><input type="text" name="types"></td></tr> <br/>
+ 	</table>
+ 
+</center>
 <script src="unit4js.js"> </script>
 </body>
 </html>

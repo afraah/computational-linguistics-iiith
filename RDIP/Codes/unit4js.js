@@ -9,3 +9,27 @@ var corpuses= '{"corpus1":"A mouse was having a very bad time. She could find no
 
 //document.write(obj.corpus1);
 
+$(document).ready(function(){
+				
+
+			  $("#corpus").change(function(){
+
+			  	if(corpus.value=="c1") {
+			  	document.getElementById("c").innerHTML=obj.corpus1; 
+			  }
+			  else 	if(corpus.value=="c2") {
+			  	document.getElementById("c").innerHTML=obj.corpus2; 
+			  }
+
+			  else if(corpus.value=="c3") {
+			  	document.getElementById("c").innerHTML=obj.corpus3; 
+			  }
+
+			  document.getElementById("mes").innerHTML="<b> Enter the number of tokens and types for the above corpus: </b>";
+
+			  document.getElementById("table1").style.display="inline";
+		 });
+
+
+			 
+});
