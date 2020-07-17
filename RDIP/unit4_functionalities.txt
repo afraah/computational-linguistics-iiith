@@ -1,0 +1,12 @@
+List of Functionalities:-
+
+1. You can select a Corpus using the dropdown
+
+2. You can enter the number of tokens and types, and have them verified to be correct or not correct by clicking on the submit button.
+
+3. If both values are correct, "Right Answer" is shown continue button is shown on the screen.
+
+4. After, we get another input field asking for recount of number of types while considering tokens with the same 'root' to be the same type along with its submit button.
+
+5. Then we get either 'Wrong Answer' or 'Right Answer' based on whether the answer typed is correct or not. 
+
