@@ -16,7 +16,22 @@ var arr;
 $(document).ready(function(){
 				
 
+
 			  $("#corpus").change(function(){
+
+			  	 document.getElementById("mes").innerHTML="";
+
+			     document.getElementById("table1").style.display="none";
+
+			     document.getElementById("btn1").style.display="none";
+			     document.getElementById("ans").innerHTML="";
+			     document.getElementById("tokens").style.backgroundColor="white";
+			     document.getElementById("types").style.backgroundColor="white";
+			     	document.getElementById("types").value="";
+			     	document.getElementById("tokens").value="";
+
+
+
 
 			  	if(corpus.value=="c1") {
 			  	document.getElementById("c").innerHTML=obj.corpus1; 
@@ -47,7 +62,7 @@ $(document).ready(function(){
 
 function calc1(){
 
-	          var corp=document.getElementById("c").innerHTML.replace(/"/g,"");
+	         var corp=document.getElementById("c").innerHTML.replace(/"/g,"");
               corp=corp.replace(/,/g,"");
               corp=corp.replace(/\./g,"");
              corp=corp.replace(/\?/g,"");
@@ -128,7 +143,7 @@ function calc1(){
               		document.getElementById("ans").style.color="red";
               }
 
-			  document.getElementById("checker").innerHTML="checked!"+map.size+" "+str;
+			 // document.getElementById("checker").innerHTML="checked!"+map.size+" "+str;
 
 			  return false;
 			  
