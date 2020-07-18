@@ -25,11 +25,14 @@ $(document).ready(function(){
 
 			     document.getElementById("btn1").style.display="none";
 			      document.getElementById("btn2").style.display="none";
+			       document.getElementById("btn3").style.display="none";
 			     document.getElementById("ans").innerHTML="";
 			     document.getElementById("tokens").style.backgroundColor="white";
 			     document.getElementById("types").style.backgroundColor="white";
 			     	document.getElementById("types").value="";
 			     	document.getElementById("tokens").value="";
+			     	document.getElementById("mes2").innerHTML="";
+			     	 document.getElementById("newtypes").style.display="none";
 
 
 
@@ -149,4 +152,15 @@ function calc1(){
 
 			  return false;
 			  
+}
+
+function cont(){
+	              document.getElementById("btn1").style.display="none";
+			      document.getElementById("btn2").style.display="none";
+			      document.getElementById("ans").innerHTML="";
+			      document.getElementById("mes2").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.<br/> #new types: <br/>";
+
+			      document.getElementById("newtypes").style.display="inline";
+			      document.getElementById("btn3").style.display="inline";
+    
 }
