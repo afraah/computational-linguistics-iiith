@@ -24,6 +24,7 @@ $(document).ready(function(){
 			     document.getElementById("table1").style.display="none";
 
 			     document.getElementById("btn1").style.display="none";
+			      document.getElementById("btn2").style.display="none";
 			     document.getElementById("ans").innerHTML="";
 			     document.getElementById("tokens").style.backgroundColor="white";
 			     document.getElementById("types").style.backgroundColor="white";
@@ -136,6 +137,7 @@ function calc1(){
               if(inp_token==token_ans && inp_type==type_ans  ){
               	document.getElementById("ans").innerHTML="Right Answer!";
               	document.getElementById("ans").style.color="green";
+              	document.getElementById("btn2").style.display="inline";
 
               }
               else{
