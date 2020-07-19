@@ -18,17 +18,6 @@ obj = JSON.parse(sentences);
 
 //there are 10 English and 7 Hindi sentences
 
-
-//INCLUDING SNOWBALL
-
-var Snowball = require('snowball');
-var stemmer = new Snowball('English');
-//stemmer.setCurrent('abbreviations');     -----> Word given to code as abbreviations
-//stemmer.stem();
-//console.log(stemmer.getCurrent());      -----> Gives output as abbrebi
-
-
-
 function shuffle(arr){
       var length=arr.length;
 

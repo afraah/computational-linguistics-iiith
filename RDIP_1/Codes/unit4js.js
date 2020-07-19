@@ -9,6 +9,16 @@ var corpuses= '{"corpus1":"A mouse was having a very bad time. She could find no
 
 //document.write(obj.corpus1);
 
+
+//INCLUDING SNOWBALL
+
+var Snowball = require('snowball');
+var stemmer = new Snowball('English');
+//stemmer.setCurrent('abbreviations');     -----> Word given to code as abbreviations
+//stemmer.stem();
+//console.log(stemmer.getCurrent());      -----> Gives output as abbrebi
+
+
 var token_ans=0;
 var type_ans=0;
 var arr;
