@@ -1,0 +1,26 @@
+List of Functionalities :-
+
+1. Select language from the dropdown.
+
+2. Select a sentence from the next dropdown.
+
+3.  A table is shown with the Lexicons and POS that contains corresponding drop downs.
+
+4. The user is to select the correct POS from the table and click "Submit".
+
+5. After clicking "Submit", then an additional column is added with either an "X" symbol or "check" symbol denoting wrong or right respectively.
+
+6. Also, a "Show Answers" button is also displayed. 
+
+7. Upon clicking, another column is added to the table displating the correct POS answers.
+
+8. The "Show Answers" button is turned into "Hide Answers" after clicking on it.
+
+9. The "Hide Answers" button hides the additional column created by the "Show Answers" button. (Basically a toggle button)
+
+Functionalities that could be added :-
+
+1. Score tracker
+
+2. Hint Button
+
