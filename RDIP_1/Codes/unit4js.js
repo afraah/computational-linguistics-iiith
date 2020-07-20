@@ -176,9 +176,6 @@ function cont(){
     
 }
 
-function uniqueWordForStemmedCorpus(word, position, self) { 
-    return self.indexOf(word) === position;
-}
 
 function stem(){
 	  var str=[];
@@ -192,12 +189,8 @@ function stem(){
 		//str[i] = stemmer.getCurrent();
 		  str.push(stemmer.getCurrent());
 	}
-	str = new Set(str);
-	str = Array.from(str);
-	//console.log(str)
+	console.log(str) //Unique words are printed in the console
 
-	let finalTypes = str.filter(uniqueWordForStemmedCorpus);
-	console.log(finalTypes);
 }
 
 
