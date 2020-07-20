@@ -177,6 +177,7 @@ function cont(){
 }
 
 
+
 function stem(){
 	  var str=[];
 	  var set1 = new Set(["to","of","the","does","very","off","me","you","did","than","can","up","xyz"]);
@@ -189,8 +190,17 @@ function stem(){
 		//str[i] = stemmer.getCurrent();
 		  str.push(stemmer.getCurrent());
 	}
-	console.log(str) //Unique words are printed in the console
+	str = new Set(str);
+	str = Array.from(str);
+	//console.log(str)
+	//console.log(str) //Unique words are printed in the console
 
+	if(document.getElementById("newtypes").value==str.length){
+			document.getElementById("newtypes").style.backgroundColor="green";
+	}
+	else{
+		document.getElementById("newtypes").style.backgroundColor="red";
+	}
 }
 
 
