@@ -43,6 +43,11 @@ $(document).ready(function(){
 			     	document.getElementById("tokens").value="";
 			     	document.getElementById("mes2").innerHTML="";
 			     	 document.getElementById("newtypes").style.display="none";
+			     	 document.getElementById("finans").innerHTML="";
+			     	 document.getElementById("newtypes").style.backgroundColor="white";
+		           document.getElementById("finans").innerHTML="";
+		            document.getElementById("newtypes").value="";
+                    	
 
 
 
@@ -197,9 +202,13 @@ function stem(){
 
 	if(document.getElementById("newtypes").value==str.length){
 			document.getElementById("newtypes").style.backgroundColor="green";
+				document.getElementById("finans").innerHTML="Right Answer!";
+              	document.getElementById("finans").style.color="green";
 	}
 	else{
 		document.getElementById("newtypes").style.backgroundColor="red";
+		    document.getElementById("finans").innerHTML="Wrong Answer!";
+              	document.getElementById("finans").style.color="red";
 	}
 }
 
