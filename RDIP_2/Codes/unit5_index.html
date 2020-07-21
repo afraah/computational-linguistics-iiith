@@ -54,8 +54,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-
-
 <body class="container-fluid" style="background-color: #C3F4C1;">
     
 	<a href="https://www.iiit.ac.in/">
@@ -68,6 +66,57 @@
 		</ul>
 
 <!-- START -->
+
+<br/> <center>
+	<label for="lang" >Choose a Language:</label> <br/>
+		<select id="lang" name="lang" style="width: 200px; ">
+			 <option value="" selected="selected" hidden="hidden">------ Select a Language -------</option>
+			<option value="e">English</option>
+			<option value="h">Hindi</option>
+		</select>
+
+<div id="ecorpusdiv"  style="display:none;">
+	<br/>
+		<label for="ecorpus">Choose a Corpus:</label> <br/>
+		<select id="ecorpus" name="ecorpus" style="width: 200px; ">
+			 <option value="" selected="selected" hidden="hidden">------ Select a Corpus -------</option>
+			<option value="0">The child liked the chocolate.</option>
+			<option value="1"> She was stopped by the bravest knight.</option>
+			<option value="2">Mary baked a cake for his birthday</option>
+			<option value="3">She decorated the cake carefully</option>
+			<option value="4">Mary wore a dress with polka dots.</option>
+
+
+		</select>
+
+	</div>
+
+	<div id="hcorpusdiv" style="display:none;">
+
+		<br/>
+
+		<label for="hcorpus">Choose a Corpus:</label> <br/>
+		<select id="hcorpus" name="hcorpus" style="width: 200px; ">
+			 <option value="" selected="selected" hidden="hidden">------ Select a Corpus -------</option>
+			<option value="0">राम ने सीता के लिए फल तोड़ा।</option>
+			<option value="1"> छोटे बच्चे पाठशाला जल्दी आयेंगे।</option>
+			<option value="2">मेहनत का फल मीठा होता है।</option>
+			<option value="3">वाह! वह खूबसूरत है।</option>
+			<option value="4">पेड़ से पत्ते गिर गए।</option>
+
+
+		</select>
+
+	</div>
+
+
+    <br/>
+    
+	<p id="corpdisp"></p>
+
+
+
+	</center>
 
  
  
