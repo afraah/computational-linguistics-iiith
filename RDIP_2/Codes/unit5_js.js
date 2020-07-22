@@ -19,6 +19,7 @@ $(document).ready(function(){
 			  	document.getElementById("hcorpusdiv").style.display="none";
 			  	document.getElementById("corpdisp").innerHTML="";
 			  	document.getElementById("table").style.display="none";
+			    document.getElementById("submit").style.display="none";
 
 			  	
 
@@ -28,6 +29,7 @@ $(document).ready(function(){
                      
 		               $("#ecorpus").change(function(){
 		               	document.getElementById("table").style.display="none";
+		               	document.getElementById("submit").style.display="none";
 		               	
                          var val=ecorpus.value;
                          
@@ -44,6 +46,8 @@ $(document).ready(function(){
 
 		             $("#hcorpus").change(function(){
 		             	document.getElementById("table").style.display="none";
+		             	 	document.getElementById("submit").style.display="none";
+
 		             	 var val=hcorpus.value;
 										
                          document.getElementById("corpdisp").innerHTML="Select the POS tag for corresponding words<br/>";//hindi[val];
@@ -81,8 +85,8 @@ function tablecreate(){
 
 	           if(l=="e"){
                 dd="<select id='pos' name='pos' >"+
-			"<option value='' selected='selected' hidden='hidden'>------ Select a POS -------</option>"+
-			"<option value='noun'>Noun</option>"+
+			
+			"<option value='noun' selected='selected' >Noun</option>"+
 			"<option value='verb'>Verb</option>"+
 			"<option value='pronoun'>Pronoun</option>"+
 			"<option value='conjunction'>Conjunction</option>"+
@@ -95,8 +99,8 @@ function tablecreate(){
 	           }
 	           else if(l=="h"){
 	           	dd="<select id='pos' name='pos' >"+
-			"<option value='' selected='selected' hidden='hidden'>------ Select a POS -------</option>"+
-			"<option value='noun'>Noun</option>"+
+			
+			"<option value='noun' selected='selected'>Noun</option>"+
 			"<option value='verb'>Verb</option>"+
 			"<option value='pronoun'>Pronoun</option>"+
 			"<option value='conjunction'>Conjunction</option>"+
@@ -115,4 +119,6 @@ function tablecreate(){
 			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td>"+dd+"</td><td></td><td></td></tr>";
 			    }
 			    document.getElementById('table').innerHTML = col;
+
+			    document.getElementById("submit").style.display="inline-block";
 }
