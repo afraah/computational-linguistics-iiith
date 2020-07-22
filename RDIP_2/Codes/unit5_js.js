@@ -5,17 +5,19 @@ var hindi=["राम ने सीता के लिए फल तोड़ा�
 //console.log(english[1]);
 
 
-
+var corp;
+var arr;
 
 $(document).ready(function(){
 				
-
+ 	    
 
 			  $("#lang").change(function(){
 
 			  	document.getElementById("ecorpusdiv").style.display="none";
 			  	document.getElementById("hcorpusdiv").style.display="none";
 			  	document.getElementById("corpdisp").innerHTML="";
+			  	document.getElementById("table").style.display="none";
 
 			  	
 
@@ -24,10 +26,14 @@ $(document).ready(function(){
 		             document.getElementById("ecorpusdiv").style.display="block"; 
                      
 		               $("#ecorpus").change(function(){
+		               	document.getElementById("table").style.display="none";
 		               	
                          var val=ecorpus.value;
-
-                         document.getElementById("corpdisp").innerHTML=english[val];
+                         
+                         document.getElementById("corpdisp").innerHTML="Select the POS tag for corresponding words<br/>";//english[val];
+                         corp= english[val];
+                         tablecreate();
+                        
 		                });
 		         }
 		       
@@ -35,14 +41,39 @@ $(document).ready(function(){
 		             document.getElementById("hcorpusdiv").style.display="block"; 
 
 		             $("#hcorpus").change(function(){
+		             	document.getElementById("table").style.display="none";
 		             	 var val=hcorpus.value;
-
-                         document.getElementById("corpdisp").innerHTML=hindi[val];
+										
+                         document.getElementById("corpdisp").innerHTML="Select the POS tag for corresponding words<br/>";//hindi[val];
+                           corp=hindi[val];
+                           corp=corp.substring(0,hindi[val].length-1);
+                            tablecreate();
 
 		                });
 
 		         }
 
+		   
+          
+
 	 });
 		 
 });
+
+
+function tablecreate(){
+		        document.getElementById("table").style.display="inline-block";
+	 			varcorp=corp.replace(/,/g,"");
+                  corp=corp.replace(/\./g,"");
+                corp=corp.replace(/\?/g,"");
+                 corp=corp.replace(/\!/g,""); 
+                  corp=corp.replace(/\|/g,""); 
+                
+                 corp=corp.trim();
+                  arr=corp.split(" ");
+
+	           var col = "<tr id='rowh'><td>LEXICON</td><td>POS</td><td></td><td></td></tr>";
+			    for (var i = 0; i < arr.length; i++)
+			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td></td><td></td><td></td></tr>";
+			    document.getElementById('table').innerHTML = col;
+}
