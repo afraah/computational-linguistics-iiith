@@ -4,6 +4,20 @@ var hindi=["राम ने सीता के लिए फल तोड़ा�
 
 //console.log(english[1]);
 
+alert("hello");
+
+var pos = require('pos');
+var words = new pos.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); //You have to enter the sentences here
+var tagger = new pos.Tagger();
+var taggedWords = tagger.tag(words);
+for (i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    console.log(word + " /" + tag);
+}
+
+
 
 var corp;
 var arr;
@@ -84,7 +98,7 @@ function tablecreate(){
                var dd;
 
 	           if(l=="e"){
-                dd="<select id='pos' name='pos' >"+
+                dd=
 			
 			"<option value='noun' selected='selected' >Noun</option>"+
 			"<option value='verb'>Verb</option>"+
@@ -98,7 +112,7 @@ function tablecreate(){
 		    "</select>";
 	           }
 	           else if(l=="h"){
-	           	dd="<select id='pos' name='pos' >"+
+	           	dd=
 			
 			"<option value='noun' selected='selected'>Noun</option>"+
 			"<option value='verb'>Verb</option>"+
@@ -116,7 +130,7 @@ function tablecreate(){
 		       console.log(dd);
 
 			    for (var i = 0; i < arr.length; i++){
-			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td>"+dd+"</td><td></td><td></td></tr>";
+			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td>"+"<select id='pos"+i+"' name='pos' >"+dd+"</td><td></td><td></td></tr>";
 			    }
 			    document.getElementById('table').innerHTML = col;
 
