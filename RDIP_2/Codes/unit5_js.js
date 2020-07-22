@@ -7,6 +7,7 @@ var hindi=["राम ने सीता के लिए फल तोड़ा�
 
 var corp;
 var arr;
+var l;
 
 $(document).ready(function(){
 				
@@ -32,6 +33,7 @@ $(document).ready(function(){
                          
                          document.getElementById("corpdisp").innerHTML="Select the POS tag for corresponding words<br/>";//english[val];
                          corp= english[val];
+                         l="e";
                          tablecreate();
                         
 		                });
@@ -46,6 +48,7 @@ $(document).ready(function(){
 										
                          document.getElementById("corpdisp").innerHTML="Select the POS tag for corresponding words<br/>";//hindi[val];
                            corp=hindi[val];
+                            l="h";
                            corp=corp.substring(0,hindi[val].length-1);
                             tablecreate();
 
@@ -73,7 +76,43 @@ function tablecreate(){
                   arr=corp.split(" ");
 
 	           var col = "<tr id='rowh'><td>LEXICON</td><td>POS</td><td></td><td></td></tr>";
-			    for (var i = 0; i < arr.length; i++)
-			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td></td><td></td><td></td></tr>";
+
+               var dd;
+
+	           if(l=="e"){
+                dd="<select id='pos' name='pos' >"+
+			"<option value='' selected='selected' hidden='hidden'>------ Select a POS -------</option>"+
+			"<option value='noun'>Noun</option>"+
+			"<option value='verb'>Verb</option>"+
+			"<option value='pronoun'>Pronoun</option>"+
+			"<option value='conjunction'>Conjunction</option>"+
+			"<option value='interjection'>Interjection</option>"+
+			"<option value='determiner'>Determiner</option>"+
+			"<option value='adjective'>Adjective</option>"+
+			"<option value='adverb'>Adverb</option>"+
+			"<option value='preposition'>Preposition</option>"+
+		    "</select>";
+	           }
+	           else if(l=="h"){
+	           	dd="<select id='pos' name='pos' >"+
+			"<option value='' selected='selected' hidden='hidden'>------ Select a POS -------</option>"+
+			"<option value='noun'>Noun</option>"+
+			"<option value='verb'>Verb</option>"+
+			"<option value='pronoun'>Pronoun</option>"+
+			"<option value='conjunction'>Conjunction</option>"+
+			"<option value='interjection'>Interjection</option>"+
+			"<option value='determiner'>Determiner</option>"+
+			"<option value='adjective'>Adjective</option>"+
+			"<option value='adverb'>Adverb</option>"+
+			"<option value='postposition'>Postposition</option>"+
+		    "</select>";
+               
+	           }
+	           console.log("hello");
+		       console.log(dd);
+
+			    for (var i = 0; i < arr.length; i++){
+			        col = col + "<tr id='id" + i + "'><td>" + arr[i] + "</td><td>"+dd+"</td><td></td><td></td></tr>";
+			    }
 			    document.getElementById('table').innerHTML = col;
 }
